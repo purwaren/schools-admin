@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\custom\StudentCustom */
 
-$this->title = 'Update Student Custom: ' . $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Student Customs', 'url' => ['index']];
+$this->title = 'Perbarui Data Siswa: ' . $model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Data Siswa', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->name, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

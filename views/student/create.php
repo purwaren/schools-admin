@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\custom\StudentCustom */
 
-$this->title = 'Create Student Custom';
-$this->params['breadcrumbs'][] = ['label' => 'Student Customs', 'url' => ['index']];
+$this->title = 'Registrasi Siswa';
+$this->params['breadcrumbs'][] = ['label' => 'Data Siswa', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="student-custom-create">

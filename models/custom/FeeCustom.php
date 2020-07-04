@@ -31,4 +31,14 @@ class FeeCustom extends FeeComponent {
             'updated_at' => 'Terakhir Diperbarui',
         ];
     }
+
+    public static function getAllFeeOptions() 
+    {
+        $models = self::find()->orderBy(['name'=>'SORT_ASC'])->all();
+        $options = [];
+        foreach ($models as $row) {
+            $options[$row->amount] = $row->name.' - Rp. '.number_format($row->amount);
+        }
+        return $options;
+    }
 }

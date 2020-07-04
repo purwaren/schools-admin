@@ -1,7 +1,10 @@
 <?php
 
+use app\models\custom\FeeCustom;
+use app\models\custom\StudentCustom;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\custom\PaymentCustom */
@@ -12,23 +15,26 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'student_id')->textInput() ?>
+    <?= $form->field($model, 'student_id')->dropDownList(StudentCustom::getAllStudentOptions(), ['prompt'=>'Pilih Siswa']) ?>
 
-    <?= $form->field($model, 'trx_date')->textInput() ?>
+    <?= $form->field($model, 'payment_type')->dropDownList(FeeCustom::getAllFeeOptions(), ['prompt'=>'Jenis Pembayaran']) ?>
 
-    <?= $form->field($model, 'amount')->textInput() ?>
+    <?php 
+        echo Html::activeLabel($model, 'trx_date');
+        echo DatePicker::widget([
+            'name' => 'PaymentCustom[trx_date]', 
+            'value' => date('Y-m-d'),
+            'options' => ['placeholder' => 'Tanggal Bayar'],
+            'pluginOptions' => [
+                'format' => 'yyyy-mm-dd',
+                'todayHighlight' => true
+            ]
+        ]); 
+    ?>
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'status')->textInput() ?>
-
-    <?= $form->field($model, 'created_at')->textInput() ?>
-
-    <?= $form->field($model, 'created_by')->textInput(['maxlength' => true]) ?>
-
-    <?= $form->field($model, 'updated_at')->textInput() ?>
-
-    <?= $form->field($model, 'updated_by')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'status')->checkbox() ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

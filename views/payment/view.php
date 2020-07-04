@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\custom\PaymentCustom */
 
-$this->title = $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Payment Customs', 'url' => ['index']];
+$this->title = 'Pembayaran: '.$model->student->name;
+$this->params['breadcrumbs'][] = ['label' => 'Pembayaran', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -17,10 +17,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <p>
         <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->id], [
+        <?= Html::a('Hapus', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => 'Anda yakin akan menghapus pembayaran ini?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -30,11 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'student_id',
+            ['label'=>'Nama Siswa', 'value'=>$model->student->name],
             'trx_date',
-            'amount',
+            ['label'=>'Jumlah', 'value'=>number_format($model->amount)],
             'description',
-            'status',
+            ['label'=>'Status Bayar', 'value'=> $model->status ? 'Lunas' : 'Belum'],
             'created_at',
             'created_by',
             'updated_at',

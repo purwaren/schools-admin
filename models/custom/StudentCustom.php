@@ -25,4 +25,14 @@ class StudentCustom extends Student {
             'updated_at' => 'Terakhir Diperbarui',
         ];
     }
+
+    public static function getAllStudentOptions()
+    {
+        $models = self::find()->orderBy(['name'=>'SORT_ASC'])->all();
+        $options = [];
+        foreach ($models as $row) {
+            $options[$row->id] = $row->name;
+        }
+        return $options;
+    }
 }

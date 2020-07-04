@@ -66,7 +66,7 @@ class PaymentController extends Controller
     {
         $model = new PaymentCustom();
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+        if ($model->load(Yii::$app->request->post()) && $model->savePayment()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 

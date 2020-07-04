@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\custom\PaymentCustom */
 
-$this->title = 'Update Payment Custom: ' . $model->id;
-$this->params['breadcrumbs'][] = ['label' => 'Payment Customs', 'url' => ['index']];
+$this->title = 'Update Pembayaran: ' . $model->id;
+$this->params['breadcrumbs'][] = ['label' => 'Pembayaran', 'url' => ['index']];
 $this->params['breadcrumbs'][] = ['label' => $model->id, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>

@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\custom\StudentCustom */
 
-$this->title = $model->name;
-$this->params['breadcrumbs'][] = ['label' => 'Student Customs', 'url' => ['index']];
+$this->title = 'Data Siswa: '.$model->name;
+$this->params['breadcrumbs'][] = ['label' => 'Data Siswa', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

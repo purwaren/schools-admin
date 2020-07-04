@@ -17,6 +17,8 @@ use Yii;
  * @property string $created_by
  * @property string|null $updated_at
  * @property string|null $updated_by
+ *
+ * @property Student $student
  */
 class Payment extends \yii\db\ActiveRecord
 {
@@ -40,6 +42,7 @@ class Payment extends \yii\db\ActiveRecord
             [['trx_date', 'created_at', 'updated_at'], 'safe'],
             [['description'], 'string', 'max' => 512],
             [['created_by', 'updated_by'], 'string', 'max' => 32],
+            [['student_id'], 'exist', 'skipOnError' => true, 'targetClass' => Student::className(), 'targetAttribute' => ['student_id' => 'id']],
         ];
     }
 
@@ -60,5 +63,15 @@ class Payment extends \yii\db\ActiveRecord
             'updated_at' => 'Updated At',
             'updated_by' => 'Updated By',
         ];
+    }
+
+    /**
+     * Gets query for [[Student]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getStudent()
+    {
+        return $this->hasOne(Student::className(), ['id' => 'student_id']);
     }
 }
