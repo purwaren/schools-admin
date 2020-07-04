@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
+use kartik\date\DatePicker;
 
 /* @var $this yii\web\View */
 /* @var $model app\models\custom\StudentCustom */
@@ -16,7 +17,16 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'birthdate')->textInput() ?>
+    <?= Html::activeLabel($model, 'birthdate')?>
+    <?= DatePicker::widget([
+            'name' => 'StudentCustom[birthdate]', 
+            'value' => date('Y-m-d'),
+            'options' => ['placeholder' => 'Tanggal Lahir'],
+            'pluginOptions' => [
+                'format' => 'yyyy-mm-dd',
+                'todayHighlight' => true
+            ]
+        ]);  ?>
 
     <?= $form->field($model, 'starting_year')->textInput(['maxlength' => true]) ?>
 
