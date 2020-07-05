@@ -49,7 +49,7 @@ class Student extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'nis' => 'Nis',
-            'name' => 'Name',
+            'name' => 'Nama Siswa',
             'birthdate' => 'Birthdate',
             'starting_year' => 'Starting Year',
             'created_by' => 'Created By',

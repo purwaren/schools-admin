@@ -32,7 +32,7 @@ class PaymentCustom extends Payment {
         return [
             'id' => 'ID',
             'student_id' => 'Nama Siswa',
-            'trx_date' => 'Tanggal Transaksi',
+            'trx_date' => 'Tanggal Bayar',
             'amount' => 'Jumlah (IDR)',
             'description' => 'Keterangan',
             'status' => 'Lunas',

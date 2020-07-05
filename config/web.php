@@ -51,7 +51,9 @@ $config = [
             'rules' => [
             ],
         ],
-        
+        'formatter' => [
+            'currencyCode' => 'IDR'
+        ],
     ],
     'params' => $params,
 ];
