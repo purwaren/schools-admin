@@ -13,7 +13,7 @@ $this->title = 'Sistem Administrasi Sekolah';
 
         <p class="lead">Sistem Administrasi Sekolah v 0.1</p>
         <?php if (Yii::$app->user->isGuest) { ?>
-        <p><a class="btn btn-lg btn-success" href="/index.php/site/login">Login Untuk Memulai</a></p>
+        <p><a class="btn btn-lg btn-success" href="<?= Url::toRoute(['/site/login'])?>">Login Untuk Memulai</a></p>
         <?php } ?>
     </div>
     <?php if(!Yii::$app->user->isGuest) { ?>
