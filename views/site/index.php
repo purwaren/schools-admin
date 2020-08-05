@@ -16,6 +16,7 @@ $this->title = 'Sistem Administrasi Sekolah';
         <p><a class="btn btn-lg btn-success" href="/index.php/site/login">Login Untuk Memulai</a></p>
         <?php } ?>
     </div>
+    <?php if(!Yii::$app->user->isGuest) { ?>
     <div class="body-content">
         <div class="col-lg-4">
             <div class="jumbotron">
@@ -33,4 +34,5 @@ $this->title = 'Sistem Administrasi Sekolah';
             </div>
         </div>
     </div>
+   <?php } ?>
 </div>
