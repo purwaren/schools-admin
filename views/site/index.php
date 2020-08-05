@@ -2,6 +2,8 @@
 
 /* @var $this yii\web\View */
 
+use yii\helpers\Url;
+
 $this->title = 'Sistem Administrasi Sekolah';
 ?>
 <div class="site-index">
@@ -17,17 +19,17 @@ $this->title = 'Sistem Administrasi Sekolah';
     <div class="body-content">
         <div class="col-lg-4">
             <div class="jumbotron">
-                <p><a class="btn btn-lg btn-primary" href="/index.php/student">Lihat Data Semua Siswa</a></p>
+                <p><a class="btn btn-lg btn-primary" href="<?= Url::toRoute(['/student'])?>">Lihat Data Semua Siswa</a></p>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="jumbotron">
-                <p><a class="btn btn-lg btn-primary" href="/index.php/payment">Lihat Data Pembayaran</a></p>
+                <p><a class="btn btn-lg btn-primary" href="<?= Url::toRoute(['/payment'])?>">Lihat Data Pembayaran</a></p>
             </div>
         </div>
         <div class="col-lg-4">
             <div class="jumbotron">
-                <p><a class="btn btn-lg btn-primary" href="/index.php/fee">Lihat Komponen Biaya</a></p>
+                <p><a class="btn btn-lg btn-primary" href="<?= Url::toRoute(['/fee'])?>">Lihat Komponen Biaya</a></p>
             </div>
         </div>
     </div>
